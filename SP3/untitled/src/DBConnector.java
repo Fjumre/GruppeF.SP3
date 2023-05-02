@@ -3,11 +3,11 @@ import java.sql.*;
 public class DBConnector {
 
     // database URL
-    static final String DB_URL = "jdbc:mysql://localhost/world";
+    static final String DB_URL = "jdbc:mysql://localhost/sp3";
 
     //  Database credentials
     static final String USER = "root";
-    static final String PASS = "DatCPH23!";
+    static final String PASS = "16Jan1983.";
 
 
 
@@ -25,7 +25,8 @@ public class DBConnector {
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
-            String sql = "SELECT name, population FROM world.city WHERE id BETWEEN 1 and 10";
+            String sql = "SELECT name FROM sp3.film WHERE id BETWEEN 1 and 100";
+
             stmt = conn.prepareStatement(sql);
 
             ResultSet rs = stmt.executeQuery(sql);
@@ -36,8 +37,8 @@ public class DBConnector {
 
 
                 String name = rs.getString("Name");
-                int population = rs.getInt("Population");
-                System.out.println(name + ": " + population);
+                // int population = rs.getInt("");
+                System.out.println(name);
 
             }
             //STEP 5: Clean-up environment
@@ -68,6 +69,7 @@ public class DBConnector {
 
 
     }
+    /*
 
     public int readPopulation(String city) {
 
@@ -95,6 +97,7 @@ public class DBConnector {
                 //Retrieve by column name
 
                 return rs.getInt("Population");
+
 
             }
             //STEP 5: Clean-up environment
@@ -125,4 +128,6 @@ public class DBConnector {
 
 
     }
+
+     */
 }

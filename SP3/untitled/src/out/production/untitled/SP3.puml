@@ -1,0 +1,61 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+Main <-- LoginSystem
+class Main{
+public static void main();
+Scanner;
+File f = new File();
+}
+LoginSystem <-- MediaMenu
+MediaMenu <-- Media
+LoginSystem <-- User
+Main <-- TxtUI
+Main <-- IO
+
+Interface Media{
+String getName();
+int getYear();
+double getRating();
+String getCategorise();
+
+
+}
+
+class Film implements Media{
+ArrayList<String> categories;
+String name;
+int year;
+}
+
+class MediaMenu{
+ArrayList<Media> media;
+searchByName();
+searchByCategorise();
+
+}
+
+class User{
+ArrayList<Media> savedMedia;
+ArrayList<Media> seenMedia;
+String userName;
+}
+
+class IO {
+
+}
+
+class TxtUI{
+
+}
+
+class LoginSystem{
+createUser();
+boolean login();
+FileIO;
+}
+
+
+
+@enduml
