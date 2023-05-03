@@ -27,7 +27,7 @@ public class DBConnector {
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
-            String sql = "SELECT id, name, catagories FROM sp3.film ";
+            String sql = "SELECT id, name, catagories, year, rating FROM sp3.film ";
 
             stmt = conn.prepareStatement(sql);
 
@@ -42,7 +42,9 @@ public class DBConnector {
                 String id = rs.getString("Id");
                 String name = rs.getString("Name");
                 String catagories = rs.getString("Catagories");
-                System.out.println(id + " " + name + " " + catagories);
+                String year = rs.getString("Year");
+                String rating = rs.getString("Rating");
+                System.out.println(id + " " + name + ": " + catagories + ": " + year + ": " + rating);
 
             }
             //STEP 5: Clean-up environment
