@@ -101,7 +101,7 @@ public class DBConnector {
             rs3.close();
             rs4.close();
             rs5.close();
-            
+
             stmt.close();
             conn.close();
 
@@ -129,6 +129,7 @@ public class DBConnector {
 
 
     }
+    
     /*
 
     public int readPopulation(String city) {
