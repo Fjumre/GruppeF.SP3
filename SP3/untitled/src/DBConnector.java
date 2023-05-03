@@ -85,7 +85,7 @@ public class DBConnector {
                 System.out.println(rate);
             }
             while(rs5.next()){
-                //Retrieve by column ID
+                //Retrieve all columns
 
                 String fullList = rs.getString("Full List");
                 // int population = rs.getInt("");
@@ -129,7 +129,7 @@ public class DBConnector {
 
 
     }
-    
+
     /*
 
     public int readPopulation(String city) {
