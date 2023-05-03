@@ -5,9 +5,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         HashMap<String, User> users = FileIO.readUserData();
         List<Film> moviesList = FileIO.theMoviesData();
+
+
+
         User currentUser = null;
         boolean showStartMenu = true;
         boolean showLogin = false;
@@ -18,7 +22,6 @@ public class Main {
         boolean showSavedMedia = false;
         boolean showSeenMedia = false;
         int chosenOption = 0;
-
 
         while (true) {
             if (showStartMenu) {
@@ -98,9 +101,11 @@ public class Main {
                 }
             }
             if(showAllMovies){
-                for(int i = 1; i <= moviesList.size(); i++){
+                /*for(int i = 1; i <= moviesList.size(); i++){
                     System.out.println(i + " " + moviesList.get(i-1).getName());
-                }
+                }*/DBConnector conn = new DBConnector();
+
+                conn.readData();
                 try {
                     chosenOption = Integer.parseInt(scanner.nextLine());
                     String movieTitle = moviesList.get(chosenOption-1).getName();
