@@ -89,6 +89,7 @@ public class Main {
 
                 if (users.containsKey(newUsername)) {
                     System.out.println("That username is already taken.");
+
                 } else {
                     System.out.print("Enter a new password: ");
                     String newPassword = scanner.nextLine();
@@ -123,7 +124,7 @@ public class Main {
                 if(!currentUser.getSavedMedias().contains(filmChoice)) {
                     System.out.println("2. Save movie");
                 } else {
-                    System.out.println("2. Remove movie from saved list.");
+                    System.out.println("3. Remove movie from saved list.");
                 }
                 try {
                     chosenOption = Integer.parseInt(scanner.nextLine());

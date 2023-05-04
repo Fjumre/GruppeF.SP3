@@ -5,7 +5,7 @@ public class FileIO {
 
     public static ArrayList<Film> theMoviesData() {
         File movieFile = new File("untitled/src/Movies.data");
-        ArrayList<Film> movieData = new ArrayList<>();
+        List<Film> movieData = new ArrayList<>();
 
         try {
             Scanner input = new Scanner(movieFile);
@@ -32,7 +32,7 @@ public class FileIO {
         } catch (IOException e) {
             movieData = null;
         }
-        return movieData;
+        return (ArrayList<Film>) movieData;
     }
 
 

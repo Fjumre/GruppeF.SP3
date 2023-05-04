@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class MediaMenu extends Main {
     private ArrayList<MediaMenu> media = new ArrayList<>();
     private ArrayList<MediaMenu> seenMedia = new ArrayList<>();
     private ArrayList<MediaMenu> savedMedia = new ArrayList<>();
-    private ArrayList<String> catagories;
+    private List<String> catagories;
     String name;
     private ArrayList<Integer> season;
     private ArrayList<Integer> episode;
@@ -12,7 +13,7 @@ public class MediaMenu extends Main {
     double rating;
 
 
-    public MediaMenu(ArrayList<MediaMenu>savedMedia, ArrayList<MediaMenu> seenMedia, ArrayList<String> catagories, String name, ArrayList<Integer> season, ArrayList<Integer> episode, int year, double rating){
+    public MediaMenu(ArrayList<MediaMenu>savedMedia, ArrayList<MediaMenu> seenMedia, List<String> catagories, String name, ArrayList<Integer> season, ArrayList<Integer> episode, int year, double rating){
         this.catagories = catagories;
         this.name = name;
         this.season = season;
@@ -22,7 +23,7 @@ public class MediaMenu extends Main {
         this.seenMedia= seenMedia;
     }
 
-    public ArrayList <String> getCatagories(){
+    public List <String> getCatagories(){
         return catagories;
     }
     public String getName(){
@@ -40,12 +41,16 @@ public class MediaMenu extends Main {
     public double getRating() {
         return rating;
     }
-    public ArrayList<MediaMenu> getMediaMenu(){return media;}
-    private ArrayList<MediaMenu> getSeenMedia(){return seenMedia;}
-    private ArrayList<MediaMenu> getSavedMedia(){return savedMedia;}
-
-    public MediaMenu findMediaByName(String name)
-    {
+    public ArrayList<MediaMenu> getMediaMenu(){
+        return media;
+    }
+    private ArrayList<MediaMenu> getSeenMedia(){
+        return seenMedia;
+    }
+    private ArrayList<MediaMenu> getSavedMedia(){
+        return savedMedia;
+    }
+    public MediaMenu findMediaByName(String name) {
         for (MediaMenu media : media){
             if(media.getName().equals(name)){
                 return media;
@@ -54,7 +59,7 @@ public class MediaMenu extends Main {
         return null;
     }
 
-    public MediaMenu findMediaByCatagories(ArrayList <String> catagories)
+    public MediaMenu findMediaByCatagories(List<String> catagories)
     {
         for (MediaMenu media : media){
             if(media.getCatagories().equals(catagories)){
