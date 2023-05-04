@@ -103,7 +103,8 @@ public class Main {
             if(showAllMovies){
                 /*for(int i = 1; i <= moviesList.size(); i++){
                     System.out.println(i + " " + moviesList.get(i-1).getName());
-                }*/DBConnector conn = new DBConnector();
+                }*/
+                DBConnector conn = new DBConnector();
 
                 conn.readData();
                 try {

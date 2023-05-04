@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class MediaMenu extends LoginSystem {
+public class MediaMenu extends Main {
     private ArrayList<MediaMenu> media = new ArrayList<>();
     private ArrayList<MediaMenu> seenMedia = new ArrayList<>();
     private ArrayList<MediaMenu> savedMedia = new ArrayList<>();
